@@ -87,6 +87,12 @@
         .animate-shimmer {
             animation: shimmer 2.5s infinite ease-in-out;
         }
+
+        /* Custom Scrollbar for Results Tables */
+        .results-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+        .results-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+        .results-scroll::-webkit-scrollbar-thumb { background: rgba(0, 255, 255, 0.3); border-radius: 10px; }
+        .results-scroll::-webkit-scrollbar-thumb:hover { background: rgba(0, 255, 255, 0.6); }
     </style>
 </head>
 <body class="antialiased relative">
@@ -219,63 +225,104 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+        <!-- Official Results Roll of Honour -->
+        <div class="max-w-7xl mx-auto px-4 mt-20">
+            <h3 class="text-4xl md:text-5xl font-heading font-black text-center text-white mb-12 tracking-wide"><span class="neon-text-cyan">2026</span> ROLL OF HONOUR</h3>
             
-            <!-- Official Medals -->
-            <div class="glass-card neon-border-cyan rounded-2xl p-8 transform transition hover:-translate-y-2">
-                <div class="inline-block bg-[#050511] border border-cyan-500/40 rounded-xl px-5 py-3 mb-5 shadow-[0_0_15px_rgba(0,255,255,0.15)] w-full text-center">
-                    <h3 class="text-lg lg:text-xl font-heading font-black mb-0 neon-text-cyan uppercase tracking-wider drop-shadow-md">Official Medals</h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Platinum Awards -->
+                <div class="glass-card bg-cyan-900/10 border border-cyan-500/50 rounded-3xl p-8 shadow-[0_0_20px_rgba(0,255,255,0.1)]">
+                    <h4 class="text-2xl font-heading font-bold text-cyan-300 mb-6 border-b border-cyan-500/30 pb-3 flex items-center gap-3"><span class="text-3xl">💎</span> Platinum Awards</h4>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-cyan-400 block text-xs uppercase tracking-widest mb-1">Category A</strong> APLIKASI ELESCAR</li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-cyan-400 block text-xs uppercase tracking-widest mb-1">Category B</strong> Kit GlotisXperience</li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-cyan-400 block text-xs uppercase tracking-widest mb-1">Category C</strong> MEASURESYNC: A DIGITAL MEASUREMENT CALCULATION APPLICATION FOR GARMENT PATTERN CONSTRUCTION</li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-cyan-400 block text-xs uppercase tracking-widest mb-1">Category D</strong> Learning Pharmacy Through Natural Cosmetic Formulation: A Hands-On Educational Kit</li>
+                    </ul>
                 </div>
-                <div class="text-gray-300 font-medium space-y-4">
-                    <p class="text-sm italic text-gray-400 mb-4 text-center">Awarded across Categories A, B, C, & D:</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-4 bg-gray-900/50 p-3 rounded-lg border border-gray-700"><span class="text-3xl">🥇</span> <span class="text-xl font-bold text-yellow-500">Gold Medal</span></li>
-                        <li class="flex items-center gap-4 bg-gray-900/50 p-3 rounded-lg border border-gray-700"><span class="text-3xl">🥈</span> <span class="text-xl font-bold text-gray-300">Silver Medal</span></li>
-                        <li class="flex items-center gap-4 bg-gray-900/50 p-3 rounded-lg border border-gray-700"><span class="text-3xl">🥉</span> <span class="text-xl font-bold text-orange-400">Bronze Medal</span></li>
+
+                <!-- Special Awards -->
+                <div class="glass-card bg-yellow-900/10 border border-yellow-500/50 rounded-3xl p-8 shadow-[0_0_20px_rgba(250,204,21,0.1)]">
+                    <h4 class="text-2xl font-heading font-bold text-yellow-400 mb-6 border-b border-yellow-500/30 pb-3 flex items-center gap-3"><span class="text-3xl">⭐</span> Special Awards</h4>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Best Orator (BM) | Category A</strong> NUR ALESHA AZAHRA BINTI BODIANSA (SeedRa A216) <br><span class="text-gray-400 text-xs italic">SK PAYANG, LAHAD DATU, SABAH</span></li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Best Orator (English) | Category A</strong> THARSHIKA NAIR A/P SHASHI KUMAR (HUSKWRITE A075) <br><span class="text-gray-400 text-xs italic">SJKT LADANG RINI, JOHOR BHARU</span></li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Best English Innovation | Category B</strong> VANEESHA A/P JEEVA KUMAR (THE WHEEL OF PHONICS B005) <br><span class="text-gray-400 text-xs italic">IPG KAMPUS TUNKU BAINUN</span></li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Best English Innovation | Category C</strong> UMAIMAH BINTI MOHD IDRIS (CENTO POEM GUIDEBOOK C093) <br><span class="text-gray-400 text-xs italic">IPG KAMPUS IPOH</span></li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Outstanding Innovation Mentor | Cat A</strong> SARASWATHY A/P JAYASANKARAN <br><span class="text-gray-400 text-xs italic">SJKT LADANG SUNGAI RAYA, LANGKAWI, KEDAH</span></li>
+                        <li class="bg-gray-900/50 p-3 rounded-lg border border-gray-700/50"><strong class="text-yellow-400 block text-xs uppercase tracking-widest mb-1">Most Active Institution | Cat A</strong> SJKT LADANG SUNGAI RAYA, LANGKAWI, KEDAH</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- MELTA Special Awards -->
-            <div class="glass-card neon-border-yellow rounded-2xl p-8 transform transition hover:-translate-y-2">
-                <div class="inline-block bg-[#050511] border border-yellow-500/40 rounded-xl px-5 py-3 mb-5 shadow-[0_0_15px_rgba(250,204,21,0.15)] w-full text-center">
-                    <h3 class="text-lg lg:text-xl font-heading font-black mb-0 neon-text-yellow uppercase tracking-wider drop-shadow-md">MELTA Special Awards</h3>
+            <!-- Category D Winners -->
+            <div class="glass-card border border-pink-500/50 rounded-3xl p-8 mb-12">
+                <h4 class="text-2xl font-heading font-bold text-pink-400 mb-6 border-b border-pink-500/30 pb-3 flex items-center gap-3"><span class="text-3xl">🌍</span> Category D (International) Winners</h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 class="text-yellow-400 font-bold mb-4 flex items-center gap-2">🥇 Gold Medalists</h5>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li class="bg-gray-900/40 p-2.5 rounded border border-gray-800"><strong class="text-white">D002</strong> - Learning Pharmacy Through Natural Cosmetic Formulation</li>
+                            <li class="bg-gray-900/40 p-2.5 rounded border border-gray-800"><strong class="text-white">D001</strong> - EduWeld 2.0: Real-Time, Intelligent Welding Skill Assessment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-gray-300 font-bold mb-4 flex items-center gap-2">🥈 Silver Medalists</h5>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li class="bg-gray-900/40 p-2.5 rounded border border-gray-800"><strong class="text-white">D004</strong> - Argue AI: Empowering Students to Think, Question and Write with AI</li>
+                            <li class="bg-gray-900/40 p-2.5 rounded border border-gray-800"><strong class="text-white">D005</strong> - Study Spark: A Review Plan That Adapts When Life Interrupts</li>
+                            <li class="bg-gray-900/40 p-2.5 rounded border border-gray-800"><strong class="text-white">D003</strong> - MyOcean App: Catalysing Ocean Protection through Gamified Action</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="text-gray-300 font-medium space-y-5 mt-4">
-                    <li class="flex flex-col bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
-                        <span class="text-yellow-400 font-bold text-xs uppercase tracking-widest mb-1">Category A</span> 
-                        <span class="text-lg font-bold text-white">Best Orator</span>
-                    </li>
-                    <li class="flex flex-col bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
-                        <span class="text-yellow-400 font-bold text-xs uppercase tracking-widest mb-1">Category B</span> 
-                        <span class="text-lg font-bold text-white">Best English Innovation</span>
-                    </li>
-                    <li class="flex flex-col bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
-                        <span class="text-yellow-400 font-bold text-xs uppercase tracking-widest mb-1">Category C</span> 
-                        <span class="text-lg font-bold text-white">Best English Innovation</span>
-                    </li>
-                </ul>
             </div>
 
-            <!-- Extra Appreciation Awards -->
-            <div class="glass-card neon-border-pink rounded-2xl p-8 transform transition hover:-translate-y-2">
-                <div class="inline-block bg-[#050511] border border-pink-500/40 rounded-xl px-5 py-3 mb-5 shadow-[0_0_15px_rgba(255,42,133,0.15)] w-full text-center">
-                    <h3 class="text-lg lg:text-xl font-heading font-black mb-0 neon-text-pink uppercase tracking-wider drop-shadow-md">Extra Appreciation</h3>
+            <!-- Scrollable Tables for Categories A, B, C -->
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Cat A Box -->
+                <div class="glass-card border border-green-500/40 rounded-2xl p-6 flex flex-col h-[400px]">
+                    <h4 class="text-xl font-heading font-bold text-green-400 mb-4 border-b border-green-500/30 pb-2">Category A Winners</h4>
+                    <div class="results-scroll overflow-y-auto pr-2 flex-1 space-y-2 text-xs text-gray-300">
+                        <!-- Add Cat A winners here -->
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | A251 APLIKASI ELECSAR</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | A063 ARANG EMAS SAWIT</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | A286 ALCHEMY NEXUS</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-gray-300">SILVER</strong> | A078 KIT HAND MATHS</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-gray-300">SILVER</strong> | A115 ECOPOT SAWIT</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-orange-400">BRONZE</strong> | A111 SMART DOOR LATCH</div>
+                        <div class="p-2 text-center text-gray-500 italic mt-4">Scroll to view more, or download the official e-Certificates to see the full list of 150+ winners!</div>
+                    </div>
                 </div>
-                <ul class="text-gray-300 font-medium space-y-5 mt-4">
-                    <li class="flex flex-col bg-pink-900/20 p-4 rounded-lg border border-pink-500/30">
-                        <span class="text-pink-400 font-bold text-xs uppercase tracking-widest mb-1">Category A</span> 
-                        <span class="text-lg font-bold text-white">Best Orator <br><span class="text-sm text-pink-300 font-normal">(Bahasa Melayu)</span></span>
-                    </li>
-                    <li class="flex flex-col bg-pink-900/20 p-4 rounded-lg border border-pink-500/30">
-                        <span class="text-pink-400 font-bold text-xs uppercase tracking-widest mb-1">Category A</span> 
-                        <span class="text-lg font-bold text-white">Most Active Advisor</span>
-                    </li>
-                    <li class="flex flex-col bg-pink-900/20 p-4 rounded-lg border border-pink-500/30">
-                        <span class="text-pink-400 font-bold text-xs uppercase tracking-widest mb-1">Category A</span> 
-                        <span class="text-lg font-bold text-white">Most Active Institution Award</span>
-                    </li>
-                </ul>
+
+                <!-- Cat B Box -->
+                <div class="glass-card border border-cyan-500/40 rounded-2xl p-6 flex flex-col h-[400px]">
+                    <h4 class="text-xl font-heading font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">Category B Winners</h4>
+                    <div class="results-scroll overflow-y-auto pr-2 flex-1 space-y-2 text-xs text-gray-300">
+                        <!-- Add Cat B winners here -->
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | B154 Kit GlotisXperience</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | B113 Tri-Misi Abjad D'Rimba (Tri-MAD'Ri)</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | B152 Digital Performance Monitoring</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-gray-300">SILVER</strong> | B107 TransforMath</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-gray-300">SILVER</strong> | B139 EBIZCLASS</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-orange-400">BRONZE</strong> | B012 S.E.C.U.R.E APPS</div>
+                        <div class="p-2 text-center text-gray-500 italic mt-4">Scroll to view more, or download the official e-Certificates to see the full list of 100+ winners!</div>
+                    </div>
+                </div>
+
+                <!-- Cat C Box -->
+                <div class="glass-card border border-purple-500/40 rounded-2xl p-6 flex flex-col h-[400px]">
+                    <h4 class="text-xl font-heading font-bold text-purple-400 mb-4 border-b border-purple-500/30 pb-2">Category C Winners</h4>
+                    <div class="results-scroll overflow-y-auto pr-2 flex-1 space-y-2 text-xs text-gray-300">
+                        <!-- Add Cat C winners here -->
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C008 Anthro-Bot Transforming Learning</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C026 GPS 1.0</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C028 BIOVIDEO SPM</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C070 CHEM TANK: PITCH N PLAY</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C104 Belajar Melalui Kesalahan</div>
+                        <div class="p-2 bg-gray-900/40 rounded border border-gray-800"><strong class="text-yellow-400">GOLD</strong> | C120 V-FIELD</div>
+                        <div class="p-2 text-center text-gray-500 italic mt-4">Scroll to view more, or download the official e-Certificates to see the full list of winners!</div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -369,7 +416,7 @@
                 </div>
             </div>
 
-            <!-- Platinum & Special Awards Row -->
+            <!-- Platinum & Special Awards E-Cert Row -->
             <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
                 <!-- Platinum Awards -->
                 <div class="glass-card bg-cyan-900/20 neon-border-cyan rounded-2xl p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition duration-300">
